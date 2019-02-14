@@ -17,7 +17,7 @@ request.onload = function () {
     var proxiedScript = request.responseText
       .replace(/www\.google/gi, 'analytics-bypassing-adblockers.netlify.com/proxy/https://www.google')
       .replace(/https:\/\/ampcid\.google/gi, 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://ampcid.google')
-      .replace(/https\:\/\/www\.google-analytics\.com\/r\/collect/gi, 'https://analytics-bypassing-adblockers.netlify.com/proxy-colect');
+      .replace(/r\/collect/gi, 'r/colect');
     var script = document.createElement('script');
     script.innerHTML = proxiedScript;
     document.head.appendChild(script);
