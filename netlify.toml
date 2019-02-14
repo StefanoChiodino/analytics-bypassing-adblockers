@@ -25,3 +25,10 @@ from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.goo
 to = "https://www.googletagmanager.com/ns.html:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
+
+# GTM no script
+[[redirects]]
+from = "https://analytics-bypassing-adblockers.netlify.com/proxy/http://www.google-analytics.com/colect*"
+to = "http://www.google-analytics.com/collect:splat"
+status = 200
+headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
