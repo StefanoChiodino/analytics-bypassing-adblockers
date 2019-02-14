@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bypassing ad blockers for Google Analytics</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,7 +17,7 @@
 
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-131454707-1', 'auto');
+      ga('create', 'UA-134528920-1', 'auto');
       ga('send', 'pageview');
 
       function gtag(){dataLayer.push(arguments);}
@@ -24,8 +27,8 @@
       request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
           var proxiedScript = request.responseText
-            .replace(/www\.google/gi, 'negative-reviews.com/proxy/https://www.google')
-            .replace(/https\:\/\/ampcid\.google/gi, 'https://negative-reviews.com/proxy/https://ampcid.google')
+            .replace(/www\.google/gi, 'analytics-bypassing-adblockers.netlify.com/proxy/https://www.google')
+            .replace(/https\:\/\/ampcid\.google/gi, 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://ampcid.google')
             .replace(/r\/collect/gi, 'r/colect');
           var script = document.createElement('script');
           script.innerHTML = proxiedScript;
@@ -43,17 +46,23 @@
 <noscript><iframe src="https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/ns.html?id=GTM-PDMCJXV"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div>
-    <h1>Bypassing ad blockers for Google Analytics</h1>
-    <p>Is scarily easy to bypass ad blocker to serve Google Tag Manager and Analytics.</p>
 
-    <div id="gtm-target"></div>
 
-    <h2>Tested with</h2>
-    <ul>
-        <li>uBlock + Chrome</li>
-        <li><a href="https://github.com/StevenBlack/hosts">Steven Black's</a> domains list</li>
-    </ul>
-</div>
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <h1 class="title">Bypassing ad blockers for Google Analytics</h1>
+            <pclass="subtitle">Is scarily easy to bypass ad blocker to serve Google Tag Manager and Analytics.</p>
+
+            <div id="gtm-target"></div>
+
+            <h2>Tested with</h2>
+            <ul>
+                <li>uBlock + Chrome</li>
+                <li><a href="https://github.com/StevenBlack/hosts">Steven Black's</a> domains list</li>
+            </ul>
+        </div>
+    </div>
+</section>
 </body>
 </html>
