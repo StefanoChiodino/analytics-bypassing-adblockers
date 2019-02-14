@@ -8,5 +8,5 @@ status = 200
 # bypass the easylist filter that targets "r/collects?".
 [[redirects]]
 from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/r/colect?*"
-to = "https://www.google-analytics.com/r/collect?:slat"
+to = "https://www.google-analytics.com/r/collect?:splat"
 status = 200
