@@ -16,8 +16,7 @@ request.onload = function () {
   if (request.status >= 200 && request.status < 400) {
     var proxiedScript = request.responseText
       .replace(/www\.google/gi, 'analytics-bypassing-adblockers.netlify.com/proxy/https://www.google')
-      .replace(/https:\/\/ampcid\.google/gi, 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://ampcid.google')
-      .replace(/r\/collect/gi, 'r/colect');
+      .replace(/https:\/\/ampcid\.google/gi, 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://ampcid.google');
     var script = document.createElement('script');
     script.innerHTML = proxiedScript;
     document.head.appendChild(script);
