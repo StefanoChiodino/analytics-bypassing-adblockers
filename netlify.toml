@@ -1,7 +1,7 @@
 # Reverse proxy https://www.google-analytics.com/r/collect? in particular so that we can change the url and
 # bypass the easylist filter that targets "r/collects?".
 [[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/r/colect?*"
+from = "/proxy/https://www.google-analytics.com/r/colect?*"
 to = "https://www.google-analytics.com/r/collect?:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
@@ -9,7 +9,7 @@ force = true
 
 # Analytics with scripts
 [[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/analytics.js"
+from = "/proxy/https://www.google-analytics.com/analytics.js"
 to = "https://www.google-analytics.com/analytics.js"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
@@ -17,7 +17,7 @@ force = true
 
 # Analytics no script. Note that "collect" has been renamed to "colect" to avoid filters.
 [[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/http://www.google-analytics.com/colect?*"
+from = "/proxy/http://www.google-analytics.com/colect?*"
 to = "http://www.google-analytics.com/collect?:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
@@ -25,7 +25,7 @@ force = true
 
 # GTM with scripts
 [[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/gtm.js?*"
+from = "/proxy/https://www.googletagmanager.com/gtm.js?*"
 to = "https://www.googletagmanager.com/gtm.js?:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
@@ -33,7 +33,7 @@ force = true
 
 # GTM no script
 [[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/ns.html?*"
+from = "/proxy/https://www.googletagmanager.com/ns.html?*"
 to = "https://www.googletagmanager.com/ns.html?:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
