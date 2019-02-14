@@ -68,8 +68,7 @@
             <p>A reverse proxy is needed to mark the real soruce of the JavaScript files. I use Netlify which works great, but you can use anything that gets the job done: IIS rewrites, a custom controller in your backend, whatever.</p>
             <h3>Configure Netlify redirects as reverse proxy</h3>
             <p><a href="https://www.netlify.com/docs/redirects/">Refer to Netlify redirects docs</a>.</p>
-            <p>It's as easy as adding this file to redirect everything 1:1 and a specific proxy to rename "collect" to
-                "colect" to fool <a href="https://easylist.to/">EasyList</a> that targets "r/collect?".</p>
+            <p>It's as easy as adding this file to redirect everything 1:1 (some specific ad blockers lists filer out anything with "r/collect?" in the path so that may need rewriting too).</p>
             <p>
                 <script src="https://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/netlify.toml"></script>
             </p>
@@ -81,6 +80,7 @@
             <p>
                 <script src="https://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/gtm-bypass-adblockers.js"></script>
             </p>
+            <p>The same applies to the noscript version of it: just add the proxy in front of the original URL</p>
 
             <h2>Use reverse proxy for Google Analytics and rewrite its content to make it use the reverse proxy</h2>
 
@@ -91,6 +91,7 @@
             <p>
                 <script src="https://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/analytics-bypass-adblockers.js"></script>
             </p>
+            <p>Noscript versions of the Analytics scripts don't seem to be common nowadays but can receive the same threatment too</p>
 
             <h2>Tested with</h2>
             <ul>
@@ -104,6 +105,7 @@
             
             <h2>So, how do we do fight back?</h2>
             <p>I don't know if we can! 😱 You can blacklist my particular URLs too...but I can change them in 1 minute. You could fingerprint the JavaScript file, I could add a random semi-colon and mess with that. I don't know how to come back from this approach!</p>
+            <p>The only thing that I can think of right now is to use <a href="https://noscript.net/">NoScript</a> or alternatives that fundamentally whitelist scripts, while not triggering the noscript tags.</p>
 
             <div class="columns">
                 <div class="column is-6">
