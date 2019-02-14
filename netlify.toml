@@ -6,9 +6,17 @@ to = "https://www.google-analytics.com/r/collect:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
 
+# Analytics with scripts
 [[redirects]]
 from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/analytics.js"
 to = "https://www.google-analytics.com/analytics.js"
+status = 200
+headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
+
+# Analytics no script. Note that "collect" has been renamed to "colect" to avoid filters.
+[[redirects]]
+from = "https://analytics-bypassing-adblockers.netlify.com/proxy/http://www.google-analytics.com/colect*"
+to = "http://www.google-analytics.com/collect:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
 
@@ -23,12 +31,5 @@ headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers
 [[redirects]]
 from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/ns.html*"
 to = "https://www.googletagmanager.com/ns.html:splat"
-status = 200
-headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
-
-# GTM no script
-[[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/http://www.google-analytics.com/colect*"
-to = "http://www.google-analytics.com/collect:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
