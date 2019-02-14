@@ -1,30 +1,4 @@
-# Reverse proxy https://www.google-analytics.com/r/collect? in particular so that we can change the url and
-# bypass the easylist filter that targets "r/collects?".
 [[redirects]]
-from = "/proxy/https://www.google-analytics.com/r/colect?*"
-to = "https://www.google-analytics.com/r/collect?:splat"
-status = 200
-
-# Analytics with scripts
-[[redirects]]
-from = "/proxy/https://www.google-analytics.com/analytics.js"
-to = "https://www.google-analytics.com/analytics.js"
-status = 200
-
-# Analytics no script. Note that "collect" has been renamed to "colect" to avoid filters.
-[[redirects]]
-from = "/proxy/http://www.google-analytics.com/colect?*"
-to = "http://www.google-analytics.com/collect?:splat"
-status = 200
-
-# GTM with scripts
-[[redirects]]
-from = "/proxy/https://www.googletagmanager.com/gtm.js?*"
-to = "https://www.googletagmanager.com/gtm.js?:splat"
-status = 200
-
-# GTM no script
-[[redirects]]
-from = "/proxy/https://www.googletagmanager.com/ns.html?*"
-to = "https://www.googletagmanager.com/ns.html?:splat"
+from = "/proxy/*"
+to = ":splat"
 status = 200
