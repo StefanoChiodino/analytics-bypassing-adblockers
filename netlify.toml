@@ -1,14 +1,27 @@
 # Reverse proxy https://www.google-analytics.com/r/collect? in particular so that we can change the url and
 # bypass the easylist filter that targets "r/collects?".
 [[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/r/colect?*"
-to = "https://www.google-analytics.com/r/collect?:splat"
+from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/r/colect*"
+to = "https://www.google-analytics.com/r/collect:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
 
-# Reverse proxy anything after "/proxy/".
 [[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/*"
-to = ":splat"
+from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/analytics.js"
+to = "https://www.google-analytics.com/analytics.js"
+status = 200
+headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
+
+# GTM with scripts
+[[redirects]]
+from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/gtm.js*"
+to = "https://www.googletagmanager.com/gtm.js:splat"
+status = 200
+headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
+
+# GTM no script
+[[redirects]]
+from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/ns.html*"
+to = "https://www.googletagmanager.com/ns.html:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
