@@ -42,7 +42,7 @@
         if (request.status >= 200 && request.status < 400) {
           var proxiedScript = request.responseText
             .replace(/www\.google/gi, 'analytics-bypassing-adblockers.netlify.com/proxy/https://www.google')
-            .replace(/https\:\/\/ampcid\.google/gi, 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://ampcid.google')
+            .replace(/https:\/\/ampcid\.google/gi, 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://ampcid.google')
             .replace(/r\/collect/gi, 'r/colect');
           var script = document.createElement('script');
           script.innerHTML = proxiedScript;
@@ -86,11 +86,17 @@
                     <p class="subtitle">Ingenuity, reverse proxy, string manipulation.</p>
 
                     <ul>
-                        <li>Ingenuity in thinking that I can bypass <a href="https://github.com/gorhill/uBlock">uBlock</a> (❤️).</li>
-                        <li>Reverse proxy to hide the real source of the javascript. Here is provided for free by Netlify (❤️) and configured in the netlify.toml file of the repository.</li>
+                        <li>Ingenuity in thinking that I can bypass <a
+                                href="https://github.com/gorhill/uBlock">uBlock</a> (❤️).
+                        </li>
+                        <li>Reverse proxy to hide the real source of the javascript. Here is provided for free by
+                            Netlify (❤️) and configured in the netlify.toml file of the repository.
+                        </li>
                     </ul>
 
-                    <div class="tile"><script src="http://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/netlify.toml"></script></div>
+                    <div class="tile">
+                        <script src="https://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/netlify.toml"></script>
+                    </div>
 
                     <h2>Tested with</h2>
                     <ul>
@@ -98,7 +104,9 @@
                         <li><a href="https://github.com/StevenBlack/hosts">Steven Black's</a> domains list</li>
                     </ul>
                 </div>
+            </div>
 
+            <div class="columns">
                 <div class="column is-one-third">
                     <div class="card">
                         <header class="card-header">
