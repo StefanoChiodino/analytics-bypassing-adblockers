@@ -1,14 +1,14 @@
+# Reverse proxy https://www.google-analytics.com/r/collect? in particular so that we can change the url and
+# bypass the easylist filter that targets "r/collects?". This redirect needs to appear before the catch-all one.
+[[redirects]]
+from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/r/colect?*"
+to = "https://www.google-analytics.com/r/collect?:splat"
+status = 200
+headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
+
 # Reverse proxy anything after "/proxy/".
 [[redirects]]
 from = "https://analytics-bypassing-adblockers.netlify.com/proxy/*"
 to = ":splat"
-status = 200
-headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
-
-# Reverse proxy https://www.google-analytics.com/r/collect? in particular so that we can change the url and
-# bypass the easylist filter that targets "r/collects?".
-[[redirects]]
-from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/r/colect?*"
-to = "https://www.google-analytics.com/r/collect?:splat"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
