@@ -24,6 +24,7 @@
         <div class="content">
             <h1 class="title">Bypassing ad blockers for Google Analytics</h1>
             <p>
+                This website has been built as simply as possible to demostrate this problem, check it out:
                 <a href="https://github.com/StefanoChiodino/analytics-bypassing-adblockers">
                     <img src="https://img.shields.io/github/stars/StefanoChiodino/analytics-bypassing-adblockers.svg?style=social"
                          alt="Github badge"/>
@@ -42,11 +43,10 @@
 
             <ul>
                 <li>Ingenuity in thinking that I can bypass <a
-                        href="https://github.com/gorhill/uBlock">uBlock</a> (❤️).
-                </li>
+                        href="https://github.com/gorhill/uBlock">uBlock</a> (❤️).</li>
                 <li>Reverse proxy to hide the real source of the javascript. Here is provided for free by
-                    Netlify (❤️) and configured in the netlify.toml file of the repository.
-                </li>
+                    Netlify (❤️) and configured in the netlify.toml file of the repository.</li>
+                <li>String manipulation to change the endpoint of Google Analytics inside their own JavaScript to proxy it as above.</li>
             </ul>
 
             <h2>Setup a reverse proxy with Netlify</h2>
@@ -76,9 +76,15 @@
 
             <h2>Tested with</h2>
             <ul>
-                <li>uBlock + Chrome</li>
+                <li>uBlock + Chrome/Firefox</li>
                 <li><a href="https://github.com/StevenBlack/hosts">Steven Black's</a> domains list</li>
             </ul>
+            
+            <h2>Does it work with ads too?</h2>
+            <p>I hope not. Ads are often blocked using <a href="https://github.com/gorhill/uBlock/wiki/Procedural-cosmetic-filters">cosmetic filters</a>, meaning they are identified by their HTML markup.</p>
+            
+            <h2>So, how do we do fight back?</h2>
+            <p>I don't know if we can! You can blacklist my particular URLs too...but I can change them in 1 minute. You could fingerprint the JavaScript file, I could add a random semi-colon and mess with that. I don't know how to come back from this approach!</p>
 
             <div class="columns">
                 <div class="column is-6">
