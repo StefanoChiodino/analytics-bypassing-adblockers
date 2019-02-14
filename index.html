@@ -76,10 +76,21 @@
                                  alt="Github badge"/>
                         </a>
                     </p>
-                    <p class="subtitle">Is scarily easy to bypass ad blocker to serve Google Tag Manager and
+                    <p class="subtitle">Is scarily easy to bypass ad blockers to serve Google Tag Manager and
                         Analytics.</p>
 
-                    <div class="tile" id="gtm-target"></div>
+                    <div class="tile" id="gtm-target">This content should be overridden by GTM.</div>
+
+                    <h2>But how?</h2>
+
+                    <p class="subtitle">Ingenuity, reverse proxy, string manipulation.</p>
+
+                    <ul>
+                        <li>Ingenuity in thinking that I can bypass <a href="https://github.com/gorhill/uBlock">uBlock</a> (❤️).</li>
+                        <li>Reverse proxy to hide the real source of the javascript. Here is provided for free by Netlify (❤️) and configured in the netlify.toml file of the repository.</li>
+                    </ul>
+
+                    <div class="tile"><script src="http://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/netlify.toml"></script></div>
 
                     <h2>Tested with</h2>
                     <ul>
