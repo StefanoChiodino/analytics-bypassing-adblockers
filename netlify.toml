@@ -1,0 +1,12 @@
+# Reverse proxy anything after "/proxy/".
+[[redirects]]
+from = "/proxy/*"
+to = ":splat"
+status = 200
+
+# Reverse proxy https://www.google-analytics.com/r/collect? in particular so that we can change the url and
+# bypass the easylist filter.
+[[redirects]]
+from = "https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/r/colect?*"
+to = "https://www.google-analytics.com/r/collect?:slat"
+status = 200
