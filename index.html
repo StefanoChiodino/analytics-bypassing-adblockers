@@ -7,56 +7,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-PDMCJXV');</script>
-    <!-- End Google Tag Manager -->
-
-    <script>
-      window.ga = window.ga || function () {
-        (ga.q = ga.q || []).push(arguments);
-      };
-      ga.l = +new Date;
-      ga('create', 'UA-134528920-1', 'auto');
-      ga('send', 'pageview');
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      var request = new XMLHttpRequest();
-      request.open('GET', 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/analytics.js', true);
-
-      request.onload = function () {
-        if (request.status >= 200 && request.status < 400) {
-          var proxiedScript = request.responseText
-            .replace(/www\.google/gi, 'analytics-bypassing-adblockers.netlify.com/proxy/https://www.google')
-            .replace(/https:\/\/ampcid\.google/gi, 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://ampcid.google')
-            .replace(/r\/collect/gi, 'r/colect');
-          var script = document.createElement('script');
-          script.innerHTML = proxiedScript;
-          document.head.appendChild(script);
-
-          window.dataLayer = window.dataLayer || [];
-          gtag('js', new Date());
-          gtag('config', 'UA-134329841-1');
-        }
-      };
-      request.send();
-    </script>
+    <script src="gtm-bypass-adblockers.js"></script>
+    <script src="analytics-bypass-adblockers.js"></script>
 </head>
-<body><!-- Google Tag Manager (noscript) -->
+<body>
+<!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/ns.html?id=GTM-PDMCJXV"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -94,8 +49,24 @@
                         </li>
                     </ul>
 
+                    <h2>Setup a reverse proxy with Netlify</h2>
                     <div class="tile">
                         <script src="https://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/netlify.toml"></script>
+                    </div>
+
+                    <h2>Use reverse proxy for Google Tag Manager</h2>
+
+                    <div class="tile">
+                        <p>This is a matter of simply prefixing the URL of GTM with your reverse proxy. This is enough for ad blockers to not know that this is GTM.</p>
+                        <script src="https://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/gtm-bypass-adblockers.js"></script>
+                    </div>
+
+                    <h2>Use reverse proxy for Google Analytics and rewrite its content to make it use the reverse proxy</h2>
+
+                    <div class="tile">
+                        <p>This is slightly more involved. Not only we are using the reverse proxy, but we also need to change the content of it to make it use our reverse proxy itself</p>
+                        <p>We fetch the script, rewrite some urls inside to add the reverse proxy, then we add the script to the page.</p>
+                        <script src="https://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/analytics-bypass-adblockers.js"></script>
                     </div>
 
                     <h2>Tested with</h2>
