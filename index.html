@@ -8,23 +8,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PDMCJXV');</script>
+    <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PDMCJXV');</script>
     <!-- End Google Tag Manager -->
 
     <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments);
+      };
+      ga.l = +new Date;
       ga('create', 'UA-134528920-1', 'auto');
       ga('send', 'pageview');
 
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
       var request = new XMLHttpRequest();
       request.open('GET', 'https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.google-analytics.com/analytics.js', true);
 
-      request.onload = function() {
+      request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
           var proxiedScript = request.responseText
             .replace(/www\.google/gi, 'analytics-bypassing-adblockers.netlify.com/proxy/https://www.google')
@@ -43,8 +57,10 @@
     </script>
 </head>
 <body><!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/ns.html?id=GTM-PDMCJXV"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://analytics-bypassing-adblockers.netlify.com/proxy/https://www.googletagmanager.com/ns.html?id=GTM-PDMCJXV"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
@@ -52,15 +68,46 @@
     <div class="container">
         <div class="content">
             <h1 class="title">Bypassing ad blockers for Google Analytics</h1>
-            <pclass="subtitle">Is scarily easy to bypass ad blocker to serve Google Tag Manager and Analytics.</p>
+            <div class="columns">
+                <div class="column">
+                    <p class="subtitle">Is scarily easy to bypass ad blocker to serve Google Tag Manager and
+                        Analytics.</p>
 
-            <div id="gtm-target"></div>
+                    <div id="gtm-target"></div>
 
-            <h2>Tested with</h2>
-            <ul>
-                <li>uBlock + Chrome</li>
-                <li><a href="https://github.com/StevenBlack/hosts">Steven Black's</a> domains list</li>
-            </ul>
+                    <h2>Tested with</h2>
+                    <ul>
+                        <li>uBlock + Chrome</li>
+                        <li><a href="https://github.com/StevenBlack/hosts">Steven Black's</a> domains list</li>
+                    </ul>
+                </div>
+
+                <div class="column is-one-third">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Component
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="https://bulma.io/images/placeholders/96x96.png"
+                                             alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Stefano Chiodino</p>
+                                    <p class="subtitle is-6"><a
+                                            href="https://twitter.com/chiodinostefano">@johnsmith</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
