@@ -92,7 +92,13 @@
             <p>
                 <script src="https://gist-it.appspot.com/https://github.com/StefanoChiodino/analytics-bypassing-adblockers/blob/master/analytics-bypass-adblockers.js"></script>
             </p>
-            <p>Noscript versions of the Analytics scripts don't seem to be common nowadays but can receive the same threatment too</p>
+            <p>Noscript versions of the Analytics scripts don't seem to be common nowadays but can receive the same treatment too</p>
+
+            <h2>But then you'll get data from the reverse proxy rather than the user!</h2>
+            <p>This was a point raised on <a href="https://news.ycombinator.com/item?id=19252358">Hacker News</a> a few times, but not totally true.</p>
+            <p>Having had enough data now, thanks to HN referral, I can confirm that the only data that I'm not getting is the location and provider.</p>
+            <p>The location section is blank, but I can see traffic coming from Germany and USA in the real time section. These are probably just Netlify CDNs, and I'm unsure on why they wouldn't show up on the location section. Maybe the detected IPs are too few for Google Analytics to feel confident in showing that data.</p>
+            <p>I can confirm that I get: mobile/tablet/desktop, browser, OS, mobile device, language, referral, screen size, and new/returning visitors.</p>
 
             <h2>Tested with</h2>
             <ul>
