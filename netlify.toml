@@ -1,6 +1,6 @@
 # Reverse proxy anything after "/proxy/".
 [[redirects]]
-from = "/proxy/*"
-to = ":splat"
+from = "/proxy//https://www.googletagmanager.com/gtm.js?id=GTM-PDMCJXV"
+to = "https://www.googletagmanager.com/gtm.js?id=GTM-PDMCJXV"
 status = 200
 headers = {Access-Control-Allow-Origin = "https://analytics-bypassing-adblockers.netlify.com"}
